@@ -24,4 +24,4 @@ Call parse-import command.
 
 ## Note
 
-The behavior of this command is different from exporting json files on the web. Though exporting on the web is allowed to set objectId and other reserved columns, this command is not. In short, this command changes objectIds and cannot copy some reserved columns.
+The behavior of this command is different from importing json files on the web. Though importing on the web is allowed to set objectId and other reserved columns, this command is not. In short, this command changes objectIds and cannot copy some reserved columns.
