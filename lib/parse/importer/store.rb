@@ -1,7 +1,3 @@
-require 'parsecom'
-require 'securerandom'
-require 'tempfile'
-
 module Parse
   module Importer
     class Store

@@ -8,14 +8,15 @@ Gem::Specification.new do |gem|
   gem.version       = Parse::Importer::VERSION
   gem.authors       = ["Ando Yasushi"]
   gem.email         = ["andyjpn@gmail.com"]
-  gem.description   = %q{parse.com importer}
-  gem.summary       = %q{parse.com importer}
-  gem.homepage      = ""
+  gem.description   = %q{You can import an exported zip file into your parse.com app.}
+  gem.summary       = %q{You can import an exported zip file into your parse.com app.}
+  gem.homepage      = "https://github.com/technohippy/parsecom-importer"
+  gem.license       = "MIT"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  #gem. zipruby
+  gem.add_dependency "zipruby"
 end

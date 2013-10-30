@@ -1,29 +1,27 @@
 # Parse::Importer
 
-TODO: Write a gem description
+You can import an exported zip file into your parse.com app.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'parse-importer'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
     $ gem install parse-importer
+
+If you are using rbenv, please don't forget call rehash
+
+    $ rbenv rehash
 
 ## Usage
 
-TODO: Write usage instructions here
+Set environment variables to connect parse.com
 
-## Contributing
+    export PARSE_APPLICATION_ID="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    export PARSE_API_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    export PARSE_MASTER_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+Call parse-import command.
+
+    $ parse-import 50523f10-2b8a-4bb8-83ef-31d2fa71f82d_1585107803_export.zip
+
+## Note
+
+The behavior of this command is different from exporting json files on the web. Though exporting on the web is allowed to set objectId and other reserved columns, this command is not. In short, this command changes objectIds and cannot copy some reserved columns.
