@@ -1,4 +1,4 @@
-# Parse::Importer
+# parsecom-import
 
 You can import an exported zip file into your parse.com app.
 
