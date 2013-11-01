@@ -22,6 +22,10 @@ Call parse-import command.
 
     $ parse-import 50523f10-2b8a-4bb8-83ef-31d2fa71f82d_1585107803_export.zip
 
+Or, give credentials directly
+
+    $ parse-import --appid=xxxxx --apikey=xxxxx --masterkey=xxxxx 50523f10-2b8a-4bb8-83ef-31d2fa71f82d_1585107803_export.zip
+
 ## Note
 
 The behavior of this command is different from importing json files on the web. Though importing on the web is allowed to set objectId and other reserved columns, this command is not. In short, this command changes objectIds and cannot copy some reserved columns.

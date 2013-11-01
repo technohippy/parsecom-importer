@@ -6,9 +6,21 @@ rescue LoadError
   require 'rubygems'
   require 'parse/importer'
 end
+require 'optparse'
+
+::Version = Parse::Importer::VERSION
+COMMAND_LINE = "#{$0} #{ARGV.join(' ')}"
+credentials = {}
+opts = OptionParser.new
+opts.on('--appid <Application ID>') {|v| credentials[:application_id] = v}
+opts.on('--apikey <REST API Key>') {|v| credentials[:api_key] = v}
+opts.on('--masterkey <Master Key>') {|v| credentials[:master_key] = v}
+opts.on_tail('-v', '--version', 'Show version.'){puts(opts.ver); exit}
+opts.on_tail('-h', '--help', 'Show this message.'){puts(opts.help); exit}
+opts.order! ARGV
 
 if ARGV.empty?
-  puts 'dirname'
+  puts 'Usage: parsecom-import [zipfile path]'
   exit
 end
-Parse::Importer.import ARGV.shift
+Parse::Importer.import ARGV.shift, credentials
